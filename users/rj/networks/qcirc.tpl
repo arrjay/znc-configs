@@ -3,6 +3,9 @@
 printf '// qc-irc network\n'
 ./users/network-common.sh -N qcirc -n j -a rj -M 'nickserv route_replies' -s 'irc.orospakr.ca 6667' -q 'oh no, oh my'
 
+# create log bucket
+mkdir -p "${SCRATCHDIR}/users/rj/moddata/log/qcirc"
+
 # create nickserv module data
 mkdir -p "${SCRATCHDIR}/users/rj/networks/qcirc/moddata/nickserv"
 passdata=$(pass ls user-rj-network-qcirc|head -n1|./znc_escape.sh)

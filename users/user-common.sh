@@ -18,7 +18,7 @@ tsformat='[%H:%M:%S]'
 maxquerybuffers='20'
 
 # make parts of the znc user configuration that are common.
-while getopts 'Aa:CFI:tBb:i:N:n:Pp:q:r:' opt ; do
+while getopts 'Aa:CFI:tBb:i:M:N:n:Pp:q:r:' opt ; do
   case $opt in
     A)
       # (A)dmin
@@ -64,6 +64,10 @@ while getopts 'Aa:CFI:tBb:i:N:n:Pp:q:r:' opt ; do
     n)
       # (n)ick
       nick=${OPTARG}
+      ;;
+    M)
+      # Load(M)odule
+      loadmodules=${OPTARG}
       ;;
     P)
       # (P)rependTimestamp
@@ -114,6 +118,13 @@ cat << EOF
   DenySetBindHost = false
   Ident = ${ident}
   JoinTries = 4
+EOF
+if [ ! -z "${loadmodules}" ] ; then
+  for mod in ${loadmodules} ; do
+    printf '  LoadModule = %s\n' ${mod}
+  done
+fi
+cat << EOF
   MaxJoins = 0
   MaxNetworks = ${maxnetworks}
   MaxQueryBuffers = ${maxquerybuffers}
