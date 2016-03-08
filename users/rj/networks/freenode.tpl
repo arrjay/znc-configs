@@ -1,7 +1,7 @@
 #!/bin/bash
 
 printf "// FreeNode (rj|rbergero)\n"
-./users/network-common.sh -N freenode -n rj -a rbergero -M sasl -s 'irc.freenode.net 6667' -q '*explosions*'
+./users/network-common.sh -N freenode -n rj -a rbergero -M 'sasl route_replies' -s 'irc.freenode.net 6667' -q '*explosions*'
 
 # create sasl module data
 mkdir -p "${SCRATCHDIR}/users/rj/networks/freenode/moddata/sasl"

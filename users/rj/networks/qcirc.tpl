@@ -1,7 +1,7 @@
 #!/bin/bash
 
 printf '// qc-irc network\n'
-./users/network-common.sh -N qcirc -n j -a rj -M nickserv -s 'irc.orospakr.ca 6667' -q 'oh no, oh my'
+./users/network-common.sh -N qcirc -n j -a rj -M 'nickserv route_replies' -s 'irc.orospakr.ca 6667' -q 'oh no, oh my'
 
 # create nickserv module data
 mkdir -p "${SCRATCHDIR}/users/rj/networks/qcirc/moddata/nickserv"
