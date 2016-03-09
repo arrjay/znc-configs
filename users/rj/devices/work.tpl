@@ -8,7 +8,7 @@ printf '  Pass = %s\n\n' $(pass ls user-rj-device-work-znc-znchash)
 
 for net in users/rj/networks/*.tpl ; do
   netname=$(basename $net .tpl)
-  ./users/network-common.sh -N ${netname} -n $n -a $n -s "localhost 6667 rj/${netname}:${selfpw}"
+  ./users/network-common.sh -N ${netname} -n $n -a $n -s "127.0.0.1 6667 rj/${netname}:${selfpw}"
 done
 
 printf '</User>\n'
