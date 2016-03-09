@@ -4,7 +4,7 @@ export selfpw=$(pass ls user-rj-clear)
 
 if [[ "${SELF}" == "core" ]] ; then
 printf "// rj's primary-to-znc user\n"
-./users/user-common.sh -n rj -a arrjay -r 'RJ Bergeron' -N "${netnr}" -M log
+./users/user-common.sh -C -n rj -a arrjay -r 'RJ Bergeron' -N "${netnr}" -M log
 printf '  Pass = %s\n\n' $(pass ls user-rj-znchash)
 
 # create log directory now
