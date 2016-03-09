@@ -1,7 +1,7 @@
 #!/bin/bash
 
 printf "// rj's bitlbee network\n"
-./users/network-common.sh -N bitlbee -n rj -a rj -M 'sasl route_replies' -s 'bitlbee 6667' -q 'The window station is shutting down'
+./users/network-common.sh -N bitlbee -n rj -a rj -M 'sasl route_replies colloquy' -s 'bitlbee 6667' -q 'The window station is shutting down'
 
 # create log bucket
 mkdir -p "${SCRATCHDIR}/users/rj/moddata/log/bitlbee"
