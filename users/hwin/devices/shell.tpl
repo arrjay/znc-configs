@@ -8,7 +8,7 @@ printf '  Pass = %s\n\n' $(pass ls user-hwin-device-shell-znchash)
 
 for net in users/hwin/networks/*.tpl ; do
   netname=$(basename $net .tpl)
-  ./users/network-common.sh -N ${netname} -n $n -a $n -s "127.0.0.1 6667 hwin/${netname}:${selfpw}"
+  ./users/network-common.sh -N ${netname} -n $n -a $n -s "znc 6667 hwin/${netname}:${selfpw}"
 done
 
 printf '</User>\n'
