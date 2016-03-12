@@ -2,7 +2,8 @@
 export netnr=$(ls users/hwin/networks|wc -l)
 export selfpw=$(pass ls user-hwin-clear)
 
-if [[ "${SELF}" == "core" ]] ; then
+case ${SELF} in
+core)
 printf "// mo's primary-to-znc user\n"
 # this user gets localhost-only.
 ./users/user-common.sh -C -n hwin -a hwin_ -r 'Mo' -N "${netnr}"
@@ -13,9 +14,10 @@ for net in users/hwin/networks/*.tpl ; do
 done
 
 printf '</User>\n'
-
-else
-for dev in users/hwin/devices/*.tpl ; do
+;;
+*)
+for dev in users/hwin/${SELF}/*.tpl ; do
   ./$dev
 done
-fi
+;;
+esac
