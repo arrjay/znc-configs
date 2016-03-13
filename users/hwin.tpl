@@ -15,6 +15,9 @@ done
 
 printf '</User>\n'
 ;;
+chops-7001)
+# currently noop
+;;
 *)
 for dev in users/hwin/${SELF}/*.tpl ; do
   ./$dev
