@@ -15,7 +15,7 @@ done
 
 printf '</User>\n'
 ;;
-chops-7001)
+chops-7001|chops-194)
 # currently noop
 ;;
 *)
